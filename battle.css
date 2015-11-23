@@ -1,0 +1,10 @@
+html, body { height: 100%; padding: 0; margin: 0; }
+div { width: 50%; height: 50%; float: left; }
+#playerPokemon { background: #DDD;
+                 background-image: url(https://www.irononsticker.com/images/2013/09/10/POKEMON-%20SQUIRTLE%20SQUAD%20T%20SHIRT%20IRON%20ON%20TRANSFER.jpg);
+}
+#botPokemon { background: #AAA; 
+                   background-image: url(http://static.tumblr.com/f0473e93882325497a930948bc3f9126/z81ouqi/R8Dmjihff/tumblr_static_charmandertheme.png);
+}
+#playerMoves { background: #777; }
+#botMoves { background: #444; }
