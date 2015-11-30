@@ -9,11 +9,20 @@ and open the template in the editor.
 */
 
 h1{
-    font-family: Bookerly;
+    font-family: Gotham, Helvetica Neue, Helvetica, sans-serif;
     color: #330099;
 }
 body{
+    font-family: Babas, Helvetica Neue, Helvetica, sans-serif;
     padding: 10px;
     margin: 30px;
     text-align: center;
+}
+
+.signin{
+    font-family: Gotham, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.form-lbl{
+    font-family: Gotham, Helvetica Neue, Helvetica, sans-serif;
 }

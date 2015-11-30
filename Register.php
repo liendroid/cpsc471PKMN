@@ -3,16 +3,20 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <h1>Registation Page</h1>
-        <form action="CompleteRegister.php" method="post">
+        <?php
+            include('registration.php'); //include the registration script
+        ?>
+        <h1>Registration Page</h1>
+        <form method="post">
             <label>Username:</label>
-            <input type="text" name="userName">
+            <input type="text" name="newUsername">
             <p>
             <label>Password:</label>
-            <input type="text" name="password">
+            <input type="password" name="newPassword">
             <p>
-            <input type="submit">
+            <input name='registation-submit' value='Register' type="submit">
         </form>
+        <span><?php echo $error; ?></span>
     </body>
 </html>
 

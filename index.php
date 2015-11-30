@@ -30,9 +30,11 @@ and open the template in the editor.
         <h1>Pokemon Beat Them Up</h1>
         <h2>Log In</h2>
         <form class="signin" method="post">
-            Username: <input type="text" name="username"/>
+            <label class="form-lbl"> Username: </label>
+            <input type="text" name="username"/>
             <p>
-            Password: <input type="password" name="password"/>
+            <label class="form-lbl">Password: </label>
+            <input type="password" name="password"/>
             <p>
             <input name='submit' type="submit" value=" Login "/>
         </form>
