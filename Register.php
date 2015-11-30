@@ -6,17 +6,21 @@
         <?php
             include('registration.php'); //include the registration script
         ?>
-        <h1>Registration Page</h1>
-        <form method="post">
-            <label>Username:</label>
-            <input type="text" name="newUsername">
-            <p>
-            <label>Password:</label>
-            <input type="password" name="newPassword">
-            <p>
-            <input name='registation-submit' value='Register' type="submit">
-        </form>
-        <span><?php echo $error; ?></span>
+        <div class='register'>
+            <h1>Registration Page</h1>
+            <form class="form-signup" method="post">
+                <div class ="form-field">
+                    <input type="text" class="form-input" placeholder="Username" name="newUsername" required/>
+                </div>
+                <div class="form-field">
+                    <input type="password" class="form-input" placeholder="Password" name="newPassword" required/>
+                </div>
+                <div class="form-field">
+                    <input name='registation-submit' type="submit" value="Register"/>
+                </div>
+            </form>
+            <span><?php echo $error; ?></span>
+        </div>
     </body>
 </html>
 

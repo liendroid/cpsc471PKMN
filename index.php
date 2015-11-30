@@ -19,7 +19,7 @@ and open the template in the editor.
 
              if(!$result2)
              {
-                 echo 'db error: could not create user table. Check to see if you have the table already created</br>';
+                // echo 'db error: could not create user table. Check to see if you have the table already created</br>';
              }
              else
              {
@@ -28,20 +28,22 @@ and open the template in the editor.
              include('logIn.php'); //includes the login script
         ?>
         <h1>Pokemon Beat Them Up</h1>
-        <h2>Log In</h2>
-        <form class="signin" method="post">
-            <label class="form-lbl"> Username: </label>
-            <input type="text" name="username"/>
-            <p>
-            <label class="form-lbl">Password: </label>
-            <input type="password" name="password"/>
-            <p>
-            <input name='submit' type="submit" value=" Login "/>
-        </form>
-        <span><?php echo $error; ?></span>
-        <h2>Sign Up</h2>
-        <form action="Register.php">
-            <input type="submit" value="Register"/>
-        </form>
+        <div class='signin'>
+            <h2>Log In</h2>
+            <form class="form-login" method="post">
+                <div class ="form-field">
+                    <input type="text" class="form-input" placeholder="Username" name="username" required/>
+                </div>
+                <div class="form-field">
+                    <input type="password" class="form-input" placeholder="Password" name="password" required/>
+                </div>
+                <div class="form-field">
+                    <input name='submit' type="submit" value="Login"/>
+                </div>
+            </form>
+            <span><?php echo $error; ?></span>
+        </div>
+        
+        <p class="text-center">Not a member? <a href="Register.php">Sign up now</a> <span class="fontawesome-arrow-right"></span></p>
     </body>
 </html>
