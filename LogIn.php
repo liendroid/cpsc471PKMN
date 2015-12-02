@@ -18,7 +18,7 @@
             if($results == 1 || !$query) //that means there is one row that matched the username and pw.
             {
                 //add session stuff here. Log in was successful
-                header("location:dashboard.php"); //move to the dashboard
+                header("location:selection.php"); //move to the dashboard
             }
             else
             {

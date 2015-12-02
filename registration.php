@@ -51,7 +51,7 @@
                 else
                 {
                     //add session stuff here. registration was successful
-                    header("location:dashboard.php"); //move to the dashboard
+                    header("location:selection.php"); //move to the dashboard
                 }   
             }   
         }

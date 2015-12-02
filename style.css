@@ -10,15 +10,15 @@ and open the template in the editor.
 
 h1{
     font-family: Gotham, Helvetica Neue, Helvetica, sans-serif;
-    color: #330099;
+    color: #EA3522;
 }
 body{
     font-family: Babas, Helvetica Neue, Helvetica, 'Source Sans Pro', sans-serif;
     padding: 10px;
     margin: 30px;
     text-align: center;
-    color: white;
-    background-color: #51D3A5;
+    color: #EA3522;
+    background-color: white;
 }
 
 .text-center{
@@ -91,15 +91,27 @@ body :-ms-input-placeholder {
   font-weight: 200;
 }
 
-.signin
+#signin
 {
     color: white;
+    background-color: #EA3522;
+    width: 280px;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    display: block;
+    text-align: center;
     font-family: Gotham, Helvetica Neue, Helvetica, sans-serif;
 }
 
 .register
 {
     color: white;
+    background-color: #EA3522;
+    width: 280px;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    display: block;
+    text-align: center;
     font-family: Gotham, Helvetica Neue, Helvetica, sans-serif;
 }
 
@@ -115,8 +127,8 @@ form input {
      -moz-appearance: none;
           appearance: none;
   outline: 0;
-  border: 1px solid rgba(81, 211, 165, 0.4);
-  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(234, 53, 34, 0.4);
+  background-color: rgba(255, 255, 255, 0.3);
   width: 250px;
   border-radius: 3px;
   padding: 10px 15px;
@@ -136,6 +148,6 @@ form input:hover {
 
 form input:focus {
   background-color: white;
-  width: 300px;
-  color: #53e3a6;
+  width: 260px;
+  color: #EA3522;
 }

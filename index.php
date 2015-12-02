@@ -28,7 +28,8 @@ and open the template in the editor.
              include('logIn.php'); //includes the login script
         ?>
         <h1>Pokemon Beat Them Up</h1>
-        <div class='signin'>
+        <br>
+        <div id="signin">
             <h2>Log In</h2>
             <form class="form-login" method="post">
                 <div class ="form-field">
