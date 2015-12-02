@@ -6,8 +6,8 @@
         <?php
             include('registration.php'); //include the registration script
         ?>
+        <h1>Registration Page</h1>
         <div class='register'>
-            <h1>Registration Page</h1>
             <form class="form-signup" method="post">
                 <div class ="form-field">
                     <input type="text" class="form-input" placeholder="Username" name="newUsername" required/>

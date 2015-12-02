@@ -19,7 +19,7 @@ and open the template in the editor.
 
              if(!$result2)
              {
-                // echo 'db error: could not create user table. Check to see if you have the table already created</br>';
+                //echo 'db error: could not create user table. Check to see if you have the table already created</br>';
              }
              else
              {

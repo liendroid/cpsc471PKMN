@@ -1,5 +1,6 @@
 <?php
     //add session start stuff here
+    session_start();
     $error=""; //error message
     if(isset($_POST['submit']))
     {
@@ -17,8 +18,10 @@
             $results = mysqli_num_rows($query);
             if($results == 1 || !$query) //that means there is one row that matched the username and pw.
             {
+                $_SESSION['username'] = $username;
+                
                 //add session stuff here. Log in was successful
-                header("location:selection.php"); //move to the dashboard
+                header("location:template.php"); //move to the dashboard
             }
             else
             {

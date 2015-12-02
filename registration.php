@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     //add session start stuff here
     $error=""; //error message
     if(isset($_POST['registation-submit']))
@@ -50,8 +50,9 @@
                 }
                 else
                 {
+                    $_SESSION['username'] = $newUsername;
                     //add session stuff here. registration was successful
-                    header("location:selection.php"); //move to the dashboard
+                    header("location:template.php"); //move to the dashboard
                 }   
             }   
         }
