@@ -748,3 +748,217 @@ header {
     background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
     text-decoration: none;
 }
+
+#AccountInfo
+{
+    text-align: center;
+    display: block;
+}
+
+#change_PW
+{
+    padding: 10px 0;
+    position: relative;
+    z-index: 2;
+    color: #F6583C;
+    width:500px;
+    height:325px;
+    margin: 0px 35%;
+    border-radius:3px;
+    padding: 10px;
+    box-sizing:border-box;
+    font-family:helvetica;
+    visibility:hidden;
+    display:none;
+}
+
+#change_PW #oldPW
+{
+   width:250px;
+   height:40px;
+   border:2px solid silver;
+   border-radius:3px;
+   padding:5px;
+}
+#change_PW #n1pw
+{
+   margin-top:5px;
+   width:250px;
+   height:40px;
+   border:2px solid silver;
+   border-radius:3px;
+   padding:5px;
+}
+
+#change_PW #n2pw
+{
+   margin-top:5px;
+   width:250px;
+   height:40px;
+   border:2px solid silver;
+   border-radius:3px;
+   padding:5px;
+}
+
+#change_PW #update
+{
+   margin-left:-5px;
+   margin-top:10px;
+   width:250px;
+   height:40px;
+   border:none;
+   border-radius:3px;
+   color:#E6E6E6;
+   background-color:grey;
+   font-size:20px;
+}
+
+#change_PW #update:hover
+{
+    background-color: rgba(246, 88, 60, 0.4);   
+}
+
+#change_PW #cancel
+{
+   margin-left:-5px;
+   margin-top:10px;
+   width:250px;
+   height:40px;
+   border:none;
+   border-radius:3px;
+   color:#E6E6E6;
+   background-color:grey;
+   font-size:20px;
+
+}
+
+#change_PW #cancel:hover
+{
+    background-color: rgba(246, 88, 60, 0.4);   
+}
+
+#adminAccessForm
+{
+    padding: 20px 0;
+    position: relative;
+    z-index: 2;
+    color: #F6583C;
+    width:500px;
+    height:330px;
+    margin: 30px 35%;
+    border-radius:3px;
+    padding: 10px;
+    box-sizing:border-box;
+    font-family:helvetica;
+    visibility:hidden;
+    display:none;
+}
+
+#adminAccessForm #enter
+{
+   margin-left:-5px;
+   margin-top:10px;
+   width:250px;
+   height:40px;
+   border:none;
+   border-radius:3px;
+   color:#E6E6E6;
+   background-color:grey;
+   font-size:20px;
+}
+
+#adminAccessForm #enter:hover
+{
+    background-color: rgba(246, 88, 60, 0.4);   
+}
+
+#adminAccessForm #cancelAd
+{
+   margin-left:-5px;
+   margin-top:10px;
+   width:250px;
+   height:40px;
+   border:none;
+   border-radius:3px;
+   color:#E6E6E6;
+   background-color:grey;
+   font-size:20px;
+
+}
+
+#adminAccessForm #cancelAd:hover
+{
+    background-color: rgba(246, 88, 60, 0.4);   
+}
+
+#adminAccessForm #adUser
+{
+   width:250px;
+   height:40px;
+   border:2px solid silver;
+   border-radius:3px;
+   padding:5px;
+}
+
+#adminAccessForm #adPass
+{
+   margin-top:5px;
+   width:250px;
+   height:40px;
+   border:2px solid silver;
+   border-radius:3px;
+   padding:5px;
+}
+
+#show_changePW
+{
+    width: 250px;
+    height: 40px;
+    background-color:grey;
+}
+
+#show_changePW:hover
+{
+    background-color: rgba(246, 88, 60, 0.4);   
+}
+
+#adminAccess
+{
+    width: 250px;
+    height: 40px;
+    background-color:grey;
+}
+
+#adminAccess:hover
+{
+    background-color: rgba(246, 88, 60, 0.4);   
+}
+
+#adminstuff
+{
+    color: white;
+    background-color: rgba(255, 0, 0, 0.4);
+    width: 280px;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    display: block;
+    text-align: center;
+    font-family: Gotham, Helvetica Neue, Helvetica, sans-serif;
+}
+
+#delete_users
+{
+    width: 250px;
+    height: 40px;
+    background-color:grey;
+}
+
+#delete_users:hover
+{
+    background-color: rgba(246, 88, 60, 0.4);   
+}
+
+table, th, td {
+   border: 1px solid black;
+   padding: 5px;
+}
