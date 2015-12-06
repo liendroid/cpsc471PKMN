@@ -200,9 +200,9 @@ input[type=submit]:hover{
     -webkit-animation-duration: 1s;
     font-size:20px;
     position: absolute;
-    display:block-inline;
-    top:80%;
-    left:45%;
+    display:none;
+    bottom:10%;
+    right:15%;
     border: 3px solid #000;
     z-index:999;
     padding:20px 50px;
@@ -220,7 +220,7 @@ input[type=submit]:hover{
     background: -webkit-linear-gradient(-45deg, rgba(94,162,249,1) 0%,rgba(113,191,226,1) 50%,rgba(113,191,226,1) 50%,rgba(4,152,226,1) 51%,rgba(0,93,186,1) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(135deg, rgba(94,162,249,1) 0%,rgba(113,191,226,1) 50%,rgba(113,191,226,1) 50%,rgba(4,152,226,1) 51%,rgba(0,93,186,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ea2f9', endColorstr='#005dba',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+    
 }
 #recordwrapper{
     margin:0 auto;
@@ -312,18 +312,152 @@ input {
 }
 
 .pokedex{
- 
+    
     align:center;
-    width:100%;
+
     height:90%;
     overflow: hidden;
-
-    background-image:url('img/battleback.png');
     background-size:cover;
     background-repeat: no-repeat;;
     background-position: center;
+    margin: 0 auto;
+
     
 }
+
+#playerside{
+    border: 1px solid #000;
+    display:inline-block;
+    width:50%;
+    float:left;
+    height:400px;
+    padding:1%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(243,243,243,1) 50%, rgba(237,237,237,1) 51%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    
+}
+
+#botside{
+    border: 1px solid #000;
+    display:inline-block;
+    width:50%;
+    float:left;
+    height:400px;
+    padding:1%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(243,243,243,1) 50%, rgba(237,237,237,1) 51%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#playerimg{
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width:200px;
+    height:200px;
+    display:block;
+    margin: 0 auto;
+    
+}
+.playername{
+    width: 10%;
+    display:inline-block;
+    
+}
+#botimg{
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width:200px;
+    height:200px;
+    display:block;
+    margin: 0 auto;
+}
+.latestmessge{
+    color:#0099cc;
+}
+.oldmessage{
+    color:#b8b894;
+}
+.pokename{
+    display:block;
+    width:9%;
+    margin: 0 auto;
+    font-size:20px;
+    text-align:center;
+}
+
+#statslbl{
+
+    display:inline-block;
+    margin-left:30%;
+}
+.healthbar{
+    width:10%;
+    display:block;
+    margin: 0 auto;
+    text-align:center;
+    margin-bottom:3%;
+}
+.atkbar{
+    width:10%;
+    display:inline-block;
+    
+    text-align:center;
+}
+.defbar{
+    width:10%;
+    display:inline-block;
+
+    text-align:center;
+}
+.spdbar{
+    width:10%;
+    display:inline-block;
+
+    text-align:center;
+}
+#messages{
+    padding: 1% 5%;
+    display:block;
+    border:1px 0px 0px 0px solid #000;
+    height:500px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e5e5e5+100;White+3D */
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    copy
+
+
+}
+.movediv{
+    margin-left:10%;
+    display:block;
+    width:5%;
+    height:100px;
+    border: 1px solid #000;
+    padding-top:1%;
+    padding-left:1%;
+    float:left;
+    color:white;
+    
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3c5bd+0,e86c57+50,ea2803+51,ff6600+75,c72200+100;Red+Gloss */
+    background: #f3c5bd; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #f3c5bd 0%, #e86c57 50%, #ea2803 51%, #ff6600 75%, #c72200 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #f3c5bd 0%,#e86c57 50%,#ea2803 51%,#ff6600 75%,#c72200 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #f3c5bd 0%,#e86c57 50%,#ea2803 51%,#ff6600 75%,#c72200 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3c5bd', endColorstr='#c72200',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
 #account{
     margin:0 auto;
     align:center;
@@ -698,6 +832,15 @@ input[type=text]:disabled
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7fdb4a', endColorstr='#34a50e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
+.surrenderimg{
+    
+    content:url('img/surrender.png');
+    height:80px;
+    width:80px;
+    margin: 0 auto;
+    
+    
+}
 .pokeballimg{
     
     content:url('img/pokeball.png');
@@ -804,7 +947,7 @@ header {
     border-color: #000;
     border-style: solid;
     margin: 0 auto;
-
+    
     padding: 50px;
     background: #f85032;
     background: -moz-linear-gradient(-45deg, #f85032 0%, #f16f5c 50%, #f6290c 51%, #f02f17 71%, #e73827 100%); /* FF3.6-15 */

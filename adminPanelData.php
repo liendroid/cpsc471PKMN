@@ -1,7 +1,7 @@
 <?php
     function getUsers()
     {
-        $con = mysqli_connect("localhost", "root", "bloop", "pokemon_beat_em_up") or die ("Trouble connecting to the database" .  mysqli_errno($con));
+        $con = mysqli_connect("localhost", "root", "admin", "pokemon") or die ("Trouble connecting to the database" .  mysqli_errno($con));
         $adminQuery = "SELECT * from users";
         
         $query = mysqli_query($con, $adminQuery);

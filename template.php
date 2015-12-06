@@ -1,4 +1,3 @@
-//code to check if user is logged in
 <?PHP
     require_once("membersite_config.php");
     
@@ -8,14 +7,14 @@
         die();
         exit;
     }
-    ?>
+?>
 
 
 <!doctype html>
 <head>
 <title>Page</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-//stylesheet definition
+
 <link rel="stylesheet" href="templatestyle.css">
 
 <meta charset="UTF-8"><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -25,13 +24,13 @@
 
 <body style="min-width:1600px";>
 
-//top header
+
 <header>
-Pokemon Battle1
+Ready to fight?
 </header>
 
-<div id="pokedex"  >
-/// put content in here////
+<div id="pokedex" class="pokedex" >
+
 </div>
 
 
@@ -75,17 +74,52 @@ Pokemon Battle1
 
 <script>
 var sqlDATA = ''; //Global variable to store what is retrieved from sql
-
+var userPokemon;
+var botPokemon;
 
 //This is the function which will run as soon as the page is loaded up.
 $(document).ready(function(){
-                  getFromSql(done,'getusers');
+                  //userPokemon = "<?php echo $_GET['currentselection']?>";
+                  userPokemon = "<?php echo $_GET['currentselection']?>";
+                  botPokemon = "<?php echo $_GET['botselection']?>";
+                  //alert("user:" + userPokemon);
+                  buildimage();
                   });
 
 //this is the function getFromSql() will return to
 function done(id){
     tempData = JSON.parse(sqlDATA); //This command is used to parse the incoming data in sqlDATA.
     alert(tempData[0].name);
+}
+
+function buildimage(){
+    var pokedexobj = document.getElementById('pokedex');
+    
+    var botimgname;
+    if(botPokemon<10){
+        
+        botimgname = '00'+botPokemon;
+    } else if (botPokemon<100){
+        botimgname = '0'+botPokemon;
+    } else {
+        botimgname = botPokemon;
+    }
+    
+    var playerimgname;
+    if(userPokemon<10){
+        
+        playerimgname = '00'+userPokemon;
+    } else if (userPokemon<100){
+        playerimgname = '0'+userPokemon;
+    } else {
+        playerimgname = userPokemon;
+    }
+    
+    
+    
+    
+    html = '<div class="imageholder1" style=" content:url(http://assets22.pokemon.com/assets/cms2/img/pokedex/full/'+playerimgname+'.png);"></div><div class="versus">VS</div><div class="imageholder2" style=" content:url(http://assets22.pokemon.com/assets/cms2/img/pokedex/full/'+botimgname+'.png);"></div><div class="continuebtn" onclick ="window.location.href = \'battlescreen.php\'";>Continue</div>';
+    $('#pokedex').append(html);
 }
 
 
@@ -120,3 +154,4 @@ function getFromSql(callback,qType) {
 </script>
 
 </html>
+

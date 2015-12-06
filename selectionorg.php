@@ -3,18 +3,18 @@
     
     if(checklogin()==false)
     {
-        header("Location: index.php");
-        die();
+        echo("asdf");
+        RedirectToURL("index.php");
+        
         exit;
     }
-    ?>
+?>
 
 <!doctype html>
 	<head>
 		<title>Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="selectionstyle.css">
-        <link rel="stylesheet" href="card.css">
 <meta charset="UTF-8"><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 
@@ -24,7 +24,7 @@
 
 
         <header>
-            Pokemon Selection
+            Pokemon Battle1
         </header>
 
 
@@ -35,28 +35,22 @@
 
 
 
-<div id="pokedex">
+<div id="pokedex"  >
 
 </div>
-
-
 <div class="menuWrapper">
 
     <div class="topHalf">
         <a href="#" class="back-to-top">Back to Top</a>
         <input type="text" name="search" class="bottomsearchbar" id="search" onclick="clearSearchb('')"placeholder="Search..." autocomplete="off">
-       <div class="pokeballwrapper" id="pokeballwrapperID" onclick="savePokemon()";>
-        <div class="pokeballimg" ></div>
-        <div id="selectedtxtlbl" class="selectedtxtlblclass">Save(0/0)</div>
+       <div class="pokeballwrapper" id="pokeballwrapperID">
+        <div class="pokeballimg" onclick="savePokemon()";></div>
+        <div id="selectedtxtlbl" class="selectedtxtlblclass">Ready!(0/0)</div>
+
         </div>
-
-
-
         <div id="pokemonHolder" >
 
         </div>
-
-
     </div>
 
     <div class="bottomHalf" ></div>
@@ -121,6 +115,7 @@ function testF(id){
 }
 
 
+
 var pokemons;
 var pokemonsfull;
 var players;
@@ -174,7 +169,6 @@ function setpokemons(){
         var hearts = '';
         var atkdots = '';
         var defsheilds = '';
-        var spdbolts = '';
         var pokedexobj = document.getElementById('pokedex');
         
         while (pokedexobj.hasChildNodes()) {
@@ -184,8 +178,6 @@ function setpokemons(){
         var numOfdef = ((pokemons[i].def/2)-(pokemons[i].def/2.5));
         var numOfHP = ((pokemons[i].hp/2)-(pokemons[i].hp/2.5));
         var numOfAtk = ((pokemons[i].atk/2)-(pokemons[i].atk/2.5));
-        var numOfspd = ((pokemons[i].spd/2)-(pokemons[i].spd/2.5));
-        
         if(numOfdef>16){
             numOfdef=16;
         }
@@ -195,7 +187,6 @@ function setpokemons(){
         if(numOfAtk>12){
             numOfAtk=12;
         }
-        
         
         for(j=0; j<numOfHP; j++){
             hearts += '<i class="fa fa-heart"></i>';
@@ -207,10 +198,6 @@ function setpokemons(){
         
         for(j=0; j<numOfdef; j++){
             defsheilds += '<i class="fa fa-shield"></i>';
-        }
-        
-        for(j=0; j<numOfspd; j++){
-            spdbolts += '<i class="fa fa-bolt"></i>';
         }
         
         var startingclass = 'blockwrapper';
@@ -231,27 +218,12 @@ function setpokemons(){
             imgname = pokedexnumber;
         }
             
-        html += ' <div id="blockwrapper'+pokedexnumber+'"class="'+startingclass+'"  onclick="test('+ pokedexnumber +')"; onmouseover="removeIt=true;source = 1;"; onmouseout="removeIt=false;"; > <div class="pokedexnumber">#'+pokedexnumber+'</div> <div class="imageholder" style="background-image: url(img/'+imgname+'.png); background-size: 80%; background-position: center; background-repeat: no-repeat;"> </div> <div class="healthbar">'+ pokemons[i].hp + 'HP '+ hearts + '</div> <div class="block-bottom-part">  <div class="namewrapper"> '+ pokemons[i].name +' </div><div class="attacktxt">attack:</div><div class="atkbar"> ' + pokemons[i].atk +' '+ atkdots + '</div><div class="defencetxt">defence:</div><div class="defbar"> ' + pokemons[i].def +' '+ defsheilds + '</div><div class="spdtxt">speed:</div><div class="spdbar"> ' + pokemons[i].spd +' '+ spdbolts + '</div><div id="1type'+pokedexnumber+'" class="type1">type</div><div id="2type'+pokedexnumber+'" class="type2">type</div></div></div>';
+        html += ' <div id="blockwrapper'+pokedexnumber+'"class="'+startingclass+'"  onclick="test('+ pokedexnumber +')"; onmouseover="removeIt=true;source = 1;"; onmouseout="removeIt=false;"; > <div class="pokedexnumber">#'+pokedexnumber+'</div> <div class="imageholder" style="background-image: url(http://assets22.pokemon.com/assets/cms2/img/pokedex/full/'+imgname+'.png); background-size: 80%; background-position: center; background-repeat: no-repeat;"> </div> <div class="healthbar">'+ pokemons[i].hp + 'HP '+ hearts + '</div> <div class="block-bottom-part">  <div class="namewrapper"> '+ pokemons[i].name +' </div><div class="attacktxt">attack:</div><div class="atkbar"> ' + pokemons[i].atk +' '+ atkdots + '</div><div class="defencetxt">defence:</div><div class="defbar"> ' + pokemons[i].def +' '+ defsheilds + '</div></div></div>';
     }
     $('#pokedex').append(html);
-    getpoke(settypes, 'gettypes');
-
-}
-function settypes(){
-    var typelist = JSON.parse(incomingList);
-    for(var i = 0; i<pokemonsfull.length;i++){
-        //
-        var type1id = "1type"+(i+1);
-        var node = document.getElementById(type1id);
-        node.innerHTML="Type: " + typelist[i].name;
-        
-        var type2id = "2type"+(i+1);
-        var node = document.getElementById(type2id);
-        node.innerHTML="Type: " + typelist[i+1].name;
-    }
-
     setmenu(pokemons);
 }
+
 
 function setmenu(){
 
@@ -268,7 +240,7 @@ function setmenu(){
 
     //alert("in setmenu");
     var selected = currentlySelected.length;
-    document.getElementById('selectedtxtlbl').innerHTML = 'Save ('+selected+'/6)';
+    document.getElementById('selectedtxtlbl').innerHTML = 'Ready! ('+selected+'/6)';
     for(var i = 0;i<selected;i++){
         
         var pokedexnumber = pokemonsfull[currentlySelected[i]-1].pokedex;
@@ -282,7 +254,7 @@ function setmenu(){
             imgname = pokedexnumber;
         }
         
-        var html = '<div id="pokeblock" class="pokeblock"  onclick="test('+ pokedexnumber +')"; onmouseover="source = 0;if(document.getElementById(\'blockwrapper'+ pokedexnumber +'\')!=null){document.getElementById(\'boxclose'+ pokedexnumber +'\').style.display = \'block\';}"; onmouseout="removeIt = false;document.getElementById(\'boxclose'+ pokedexnumber +'\').style.display = \'none\'";><div id="boxclose'+ pokedexnumber +'" class="boxclose"  onmouseover="removeIt=true;";onmouseout="removeIt=false;";></div><div class="pokeblockName">' + pokemonsfull[currentlySelected[i]-1].name + '</div><div class="pokeblockstattxt">' + pokemonsfull[currentlySelected[i]-1].hp + ' <i class="fa fa-heart"></i></div><div class="pokeblockstattxt">' + pokemonsfull[currentlySelected[i]-1].atk + ' <i class="fa fa-gavel"></i><div class="pokeblockstattxt">' + pokemonsfull[currentlySelected[i]-1].def + ' <i class="fa fa-shield"></i></div><div class="pokeblockstattxt">' + pokemonsfull[currentlySelected[i]-1].spd + ' <i class="fa fa-bolt"></i></div><img src="img/'+imgname+'.png" class="smallblockimg"></img></div>';
+        var html = '<div id="pokeblock" class="pokeblock"  onclick="test('+ pokedexnumber +')"; onmouseover="source = 0;if(document.getElementById(\'blockwrapper'+ pokedexnumber +'\')!=null){document.getElementById(\'boxclose'+ pokedexnumber +'\').style.display = \'block\';}"; onmouseout="removeIt = false;document.getElementById(\'boxclose'+ pokedexnumber +'\').style.display = \'none\'";><div id="boxclose'+ pokedexnumber +'" class="boxclose"  onmouseover="removeIt=true;";onmouseout="removeIt=false;";></div><div class="pokeblockName">' + pokemonsfull[currentlySelected[i]-1].name + '</div><div class="pokeblockstattxt">' + pokemonsfull[currentlySelected[i]-1].hp + ' <i class="fa fa-heart"></i></div><div class="pokeblockstattxt">' + pokemonsfull[currentlySelected[i]-1].atk + ' <i class="fa fa-gavel"></i><div class="pokeblockstattxt">' + pokemonsfull[currentlySelected[i]-1].def + ' <i class="fa fa-shield"></i></div><div class="pokeblockstattxt">' + pokemonsfull[currentlySelected[i]-1].spd + ' <i class="fa fa-bolt"></i></div><img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/'+imgname+'.png" class="smallblockimg"></img></div>';
          $('#pokemonHolder').append(html);
     }
  
@@ -292,8 +264,9 @@ function setmenu(){
 
 
 $(document).ready(function(){
+                 //alert("loaded: " + playerid);
                   playerid = "<?php session_start(); echo ( $_SESSION['userID']); ?>" ;
-                  //alert(playerid);
+                  //alert("loaded: " + playerid);
                   getpoke(setpokemons,'getpokemon');
                   getpoke(setPlayers,'getplayers');
                   firstrun = 1;
@@ -422,12 +395,13 @@ function savePokemon(){
     for(var i = 0; i <currentlySelected.length; i++){
         strSelectedList += currentlySelected[i] + ",";
     }
+    alert("saved");
     getpoke(saveDone,'savepokemons');
     
 }
 
 function saveDone(){
-    window.location.href = "home.php";
+    
 }
 
 
@@ -452,7 +426,7 @@ function getpoke(callback,qType) {
            success: function(response){
            incomingList = response;
            //pokemons =  res.split(" ");
-           //alert("RECIEVED "+response);
+          // alert("RECIEVED "+response);
            callback (response);
            },
            error: function(msg){
@@ -465,5 +439,3 @@ function getpoke(callback,qType) {
 </script>
 
 </html>
-
-

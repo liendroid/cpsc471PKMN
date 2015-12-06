@@ -14,6 +14,10 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
+
+<script>
+alert("hello");
+</script>
         <h1>Dashboard</h1>
     </body>
 </html>

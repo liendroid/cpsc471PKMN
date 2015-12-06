@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $con = mysqli_connect("localhost", "root", "bloop", "pokemon_beat_em_up") or die ("Trouble connecting to the database" .  mysqli_errno($con));
+    $con = mysqli_connect("localhost", "root", "admin", "pokemon") or die ("Trouble connecting to the database" .  mysqli_errno($con));
     $selectedUser = $_POST['dUser'];
     
     $checkUserInfo = "SELECT username FROM users WHERE id='$selectedUser'";

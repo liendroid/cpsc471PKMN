@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $con = mysqli_connect("localhost", "root", "bloop", "pokemon_beat_em_up") or die ("Trouble connecting to the database" .  mysqli_errno($con));
+    $con = mysqli_connect("localhost", "root", "admin", "pokemon") or die ("Trouble connecting to the database" .  mysqli_errno($con));
     $error = "";
     
     if(isset($_POST['update_pw']))
@@ -19,9 +19,9 @@
             $n1PW = $_POST['n1PW'];
             $n2PW = $_POST['n2PW'];
             
-            $user = $_SESSION['username'];
+            $pid = $_SESSION['userID'];
             
-            $strSQL ="SELECT * FROM users WHERE username='$user' AND password='$oldPW'";
+            $strSQL ="SELECT * FROM users as U Where U.id=(Select P.userid from player as P WHERE P.pid='$pid') AND password='$oldPW'";
             $query = mysqli_query($con, $strSQL);
             if(!$query)
             {
@@ -32,13 +32,13 @@
                 $results = mysqli_num_rows($query);
                 if($results == 1)
                 {
-                   $updateSQL = "UPDATE users SET password='$n1PW' WHERE username='$user' AND password='$oldPW'";
+                   $updateSQL = "UPDATE users as U SET password='$n1PW' WHERE U.id=(Select P.userid from player as P WHERE P.pid='$pid') AND password='$oldPW'";
                    $query = mysqli_query($con, $updateSQL);
                    $error = "Password Changed Successfully.";
                 }
                 else
                 {
-                    $error = "There was an unknown issue. Sorry.";
+                    $error = "There was an unknown issue. Sorry. $results";
                 }
             }
         }

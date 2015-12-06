@@ -1,3 +1,13 @@
+<?PHP
+    require_once("membersite_config.php");
+    
+    if(checklogin()==false)
+    {
+        header("Location: index.php");
+        die();
+        exit;
+    }
+    ?>
 <?php
     include('adminPanelData.php');
 ?>
@@ -5,7 +15,7 @@
     
     <title>Admin Panel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="templatestyle.css">
+    <link rel="stylesheet" href="accountstyle.css">
 
     <meta charset="UTF-8"><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -28,25 +38,11 @@
     <div class="topHalf">
     <a href="#" class="back-to-top">Back to Top</a>
 
-    <div class="pokeballwrapper" id="pokeballwrapperID" onclick="window.location.href = 'selection.php'";>
+    <div class="pokeballwrapper" id="pokeballwrapperID" onclick="window.location.href = 'home.php'";>
     <div class="pokeballimg" ></div>
-    <div id="selectedtxtlbl" class="btnlabelclass">Pokeball</div>
+    <div id="selectedtxtlbl" class="btnlabelclass">Home</div>
     </div>
 
-    <div class="stadiumwrapper" id="stadiumwrapper" onclick="stadiumClick();">
-    <div class="stadiumimg" onclick="";></div>
-    <div class="btnlabelclass">Stadium</div>
-    </div>
-
-    <div class="accountwrapper" id="accountwrapper" onclick="window.location.href = 'account.php'";>
-    <div class="accountimg" ></div>
-    <div class="btnlabelclass">Account</div>
-    </div>
-
-    <div class="logoutwrapper" id="logoutwrapper" onclick="window.location.href = 'logout.php'">
-    <div class="logoutimg"></div>
-    <div class="btnlabelclass">Logout</div>
-    </div>
 
 
 

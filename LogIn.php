@@ -1,32 +1,33 @@
 <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 'On');
     //add session start stuff here
-    session_start();
-    $error=""; //error message
-    if(isset($_POST['submit']))
-    {
-        if(empty($_POST['username'] || empty($_POST['password'])))
-        {
-            $error="Username or Password is invalid";
-        }
-        else
-        {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            
-            $strSQL = "SELECT * FROM users WHERE password='$password' AND username='$username'";
-            $query = mysqli_query($con, $strSQL);
-            $results = mysqli_num_rows($query);
-            if($results == 1 || !$query) //that means there is one row that matched the username and pw.
-            {
-                $_SESSION['username'] = $username;
+    $link = mysqli_connect("localhost", "root", "admin");
+    mysqli_select_db($link,"pokemon");
+    $Username = $_POST['username'];
+    $Password = $_POST['password'];
+    
+    $strSQL = "SELECT * FROM users WHERE username='$Username' AND password='$Password'";
+    $query = mysqli_query($link,$strSQL);
+    $results = mysqli_num_rows($query);
+    //echo('results '.$results);
+   // echo('user '.$Username.' pass '.$Password);
+            if($results == 1) {//add session stuff here. Log in was successful
+                $strSQL = "SELECT * FROM users WHERE username='$Username'";
+                $query = mysqli_query($link,$strSQL);
+                $row = mysqli_fetch_array($query);
+                $userID = $row['id'];
+                //echo("USER id" + $userID);
                 
-                //add session stuff here. Log in was successful
-                header("location:template.php"); //move to the dashboard
+                $strSQL = "SELECT * FROM player WHERE userid='$userID'";
+                $query = mysqli_query($link,$strSQL);
+                $row = mysqli_fetch_array($query);
+                session_start();
+                $_SESSION['userID'] = $row['pid'];
+                header("Location: home.php");
+                echo(1);
+                die();
             }
-            else
-            {
-                $error="Username and Password did not match. Try again";
-            }   
-        }
-    }
+    header("Location: index.php?err=1");
+    die();
 ?>
